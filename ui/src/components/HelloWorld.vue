@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Button } from './ui/button';
 import {
   Card,
@@ -14,6 +14,36 @@ defineProps<{ msg: string }>()
 const count = ref(0)
 
 const totalSpent = ref(0)
+
+const url = ref('/api/expenses/total-spent')
+
+const data = ref(null)
+const error = ref(null)
+const loading = ref(true)
+
+const fetchData = async () => {
+  try {
+    loading.value = true
+    const response = await fetch(url.value)
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+    data.value = await response.json()
+    
+    // assign totalSpent
+    totalSpent.value = data.value.total
+
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    loading.value = false
+  }
+}
+
+
+onMounted(() => {
+  fetchData()
+})
 
 </script>
 
