@@ -1,0 +1,6 @@
+{
+    "conventionalCommits.scopes": [
+        "dev-deps",
+        "deps",
+    ]
+}
