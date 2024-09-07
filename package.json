@@ -1,5 +1,5 @@
 {
-  "name": "bun-hono-react",
+  "name": "bun-hono-vue",
   "module": "server/index.ts",
   "type": "module",
   "scripts": {
