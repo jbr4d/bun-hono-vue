@@ -7,7 +7,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '@/components/ui/card';
+
+import { api } from '@/lib/api';
+
 
 defineProps<{ msg: string }>()
 
@@ -17,32 +20,16 @@ const totalSpent = ref(0)
 
 const url = ref('/api/expenses/total-spent')
 
-const data = ref(null)
-const error = ref(null)
-const loading = ref(true)
-
-const fetchData = async () => {
-  try {
-    loading.value = true
-    const response = await fetch(url.value)
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-    data.value = await response.json()
+const fetchTotal = async () => {
+    const res = await api.expenses['total-spent'].$get()
+    const data = await res.json()
     
-    // assign totalSpent
-    totalSpent.value = data.value.total
-
-  } catch (err) {
-    error.value = err.message
-  } finally {
-    loading.value = false
-  }
+    totalSpent.value = data.total
 }
 
 
 onMounted(() => {
-  fetchData()
+  fetchTotal()
 })
 
 </script>
