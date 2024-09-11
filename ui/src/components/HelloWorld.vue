@@ -9,28 +9,29 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
+import { useQueryClient, useQuery, useMutation } from '@tanstack/vue-query'
+
 import { api } from '@/lib/api';
 
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
-
-const totalSpent = ref(0)
-
-const url = ref('/api/expenses/total-spent')
-
-const fetchTotal = async () => {
-    const res = await api.expenses['total-spent'].$get()
-    const data = await res.json()
-    
-    totalSpent.value = data.total
+async function getTotalSpent() {
+  const res = await api.expenses['total-spent'].$get()
+  if (!res.ok) {
+    throw new Error('server error')
+  }
+  const data = await res.json()
+  return data
 }
 
+const queryClient = useQueryClient()
 
-onMounted(() => {
-  fetchTotal()
+const { isLoading, isError, data, error } = useQuery({
+  queryKey: ['get-total-spent'],
+  queryFn: getTotalSpent,
 })
+
 
 </script>
 
@@ -42,7 +43,9 @@ onMounted(() => {
       <CardDescription>Total amount you've spent</CardDescription>
     </CardHeader>
     <CardContent>
-      {{ totalSpent }}
+      <span v-if="isLoading">Loading...</span>
+      <span v-else-if="isError">{{ `An error has ocurred: ${error?.message}` }}></span>
+      {{ data?.total }}
     </CardContent>
   </Card>
 
