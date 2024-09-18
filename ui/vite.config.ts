@@ -14,10 +14,13 @@ export default defineConfig({
     },
   },
   plugins: [
+    // https://github.com/posva/unplugin-vue-router
     VueRouter({
-    /* options */
+      extensions: ['.vue', '.md'],
+      dts: 'src/typed-router.d.ts',
     }),
-    vue()],
+    vue()
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

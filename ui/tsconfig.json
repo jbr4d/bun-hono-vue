@@ -1,13 +1,21 @@
 {
   "files": [],
+  "include": [
+    "./typed-router.d.ts"
+  ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
+  "types": [
+    "unplugin-vue-router/client"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   }
 }
