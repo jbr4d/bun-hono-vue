@@ -2,6 +2,7 @@
 import { useForm } from '@tanstack/vue-form'
 import Button from '@/components/ui/button/Button.vue';
 import { Input } from '@/components/ui/input'
+import { api } from '@/lib/api'
 
 const form = useForm({
   defaultValues: {
@@ -10,6 +11,10 @@ const form = useForm({
   },
   onSubmit: async ({ value }) => {
     // Do something with form data
+    const res = await api.expenses.$post({ json: value })
+    if (!res.ok) {
+        throw new Error('server error')
+    }
     console.log(value)
   },
 })
@@ -52,14 +57,20 @@ const form = useForm({
             <Input
               :name="field.name"
               :value="field.state.value"
+              type="number"
               @blur="field.handleBlur"
-              @input="(e) => field.handleChange(e.target.value)"
+              @input="(e) => field.handleChange((e.target as HTMLInputElement).valueAsNumber)
+                "
             />
             <em role="alert" v-if="field.state.meta.errors">{{ field.state.meta.errors.join(', ') }}</em>
           </template>
         </form.Field>
       </div>
-      <Button type="submit">Submit</Button>
+      <form.Subscribe>
+        <template v-slot="{ canSubmit, isSubmitting }">
+      <Button type="submit" :disabled="!canSubmit">{{ isSubmitting ? '...' : 'Submit' }}</Button>
+    </template>
+    </form.Subscribe>
     </form>
   </div>
 </template>
