@@ -3,6 +3,10 @@ import { useForm } from '@tanstack/vue-form'
 import Button from '@/components/ui/button/Button.vue';
 import { Input } from '@/components/ui/input'
 import { api } from '@/lib/api'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 
 const form = useForm({
   defaultValues: {
@@ -15,7 +19,7 @@ const form = useForm({
     if (!res.ok) {
         throw new Error('server error')
     }
-    console.log(value)
+    router.push('/')
   },
 })
 
