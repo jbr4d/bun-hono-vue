@@ -54,7 +54,7 @@ const form = useForm({
       <div>
         <form.Field name="amount"
         :validators="{
-            onChange: ({ value }) => value < 200 ? 'Must be more than 200' : undefined,
+            onBlur: ({ value }) => value < 200 ? 'Must be more than 200' : undefined,
         }">
           <template v-slot="{ field }">
             <label :for="field.name">Amount:</label>
