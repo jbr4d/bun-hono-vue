@@ -17,6 +17,10 @@
                 Create Expense
             </RouterLink>
 
+            <RouterLink icon-btn to="/profile">
+                Profile
+            </RouterLink>
+
         </nav>
     </header>
 </template>
