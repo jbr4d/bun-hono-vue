@@ -12,7 +12,7 @@ const { isLoading, isError, data, error } = useQuery(userQueryOptions)
 
 <template>
     <span v-if="isLoading">Loading...</span>
-    <span v-else-if="isError">{{ `An error has ocurred: ${error?.message}` }}></span>
+    <span v-else-if="isError">{{ `An error has ocurred: ${error?.message}` }}</span>
 
-    <p>Hello {{  data?.user.given_name }}</p>
+    <p v-else>Hello {{  data?.user.given_name }}</p>
 </template>
