@@ -51,9 +51,4 @@ const { isLoading, isError, data, error } = useQuery({
 
   <h1>{{ msg }}</h1>
 
-  <div class="card">
-    <Button type="button" @click="count++">Up</Button>
-    <Button type="button" @click="count--">Down</Button>
-    {{ count }}
-  </div>
 </template>
