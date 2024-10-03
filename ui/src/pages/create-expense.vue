@@ -3,7 +3,7 @@ import { useForm } from '@tanstack/vue-form'
 import Button from '@/components/ui/button/Button.vue';
 import { Input } from '@/components/ui/input'
 import { api } from '@/lib/api'
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router/auto'
 
 const router = useRouter()
 
