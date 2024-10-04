@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useQuery } from '@tanstack/vue-query'
-
-import { userQueryOptions } from '@/composables/useUser';
+import { useCurrentUser } from '@/composables/useUser';
 
 
 defineProps<{ msg: string }>()
 
-const { isLoading, isError, data, error } = useQuery(userQueryOptions)
+const { isLoading, isError, data, error } = useCurrentUser()
 
 </script>
 
