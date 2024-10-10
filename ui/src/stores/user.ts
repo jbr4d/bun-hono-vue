@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { useCurrentUser } from "@/composables/useUser";
 
 export const useUserStore = defineStore("user", () => {
-const { data: currentUser } = useCurrentUser();
+const { data: currentUser, isLoading } = useCurrentUser();
 //   function clear() {
 //     // TODO: clear current user
 //   }
@@ -11,5 +11,6 @@ const { data: currentUser } = useCurrentUser();
   return {
     isAuthenticated: computed(() => currentUser.value !== undefined),
     userData: computed(() => currentUser.value?.user),
+    isLoading
   };
 });
