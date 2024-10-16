@@ -11,7 +11,7 @@ const router = useRouter()
 const form = useForm({
   defaultValues: {
     title: '',
-    amount: 0
+    amount: '0'
   },
   onSubmit: async ({ value }) => {
     // Do something with form data
@@ -38,18 +38,16 @@ const form = useForm({
         <form.Field name="title">
           <template v-slot="{ field }">
             <label :for="field.name">Title:</label>
-            <Input :name="field.name" :value="field.state.value" @blur="field.handleBlur"
-              @input="(e) => field.handleChange((e.target as HTMLInputElement).value)" />
+            <Input :name="field.name" type="string" :value="field.state.value" @blur="field.handleBlur"
+              @input="(e: any) => field.handleChange((e.target as HTMLInputElement).value)" />
           </template>
         </form.Field>
       </div>
       <div>
-        <form.Field name="amount" :validators="{
-          onBlur: ({ value }) => value < 200 ? 'Must be more than 200' : undefined,
-        }">
+        <form.Field name="amount">
           <template v-slot="{ field }">
             <label :for="field.name">Amount:</label>
-            <Input :name="field.name" :value="field.state.value" type="number" @blur="field.handleBlur" @input="(e) => field.handleChange((e.target as HTMLInputElement).valueAsNumber)
+            <Input :name="field.name" :value="field.state.value" type="string" @blur="field.handleBlur" @input="(e: any) => field.handleChange((e.target as HTMLInputElement).value)
               " />
             <em role="alert" v-if="field.state.meta.errors">{{ field.state.meta.errors.join(', ') }}</em>
           </template>
