@@ -1,4 +1,4 @@
-# bun-hono-react
+# bun-hono-vue
 
 To install dependencies:
 
