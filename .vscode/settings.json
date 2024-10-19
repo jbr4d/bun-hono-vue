@@ -4,5 +4,6 @@
     "conventionalCommits.scopes": [
         "dev-deps",
         "deps",
+        "db"
     ]
 }
