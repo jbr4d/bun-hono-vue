@@ -25,3 +25,4 @@ This project was created using `bun init` in bun v1.1.17. [Bun](https://bun.sh) 
 - [ ] image proxy?
 - [ ] Add Vitest cases
 - [ ] add the out of box admin panel thing
+- [ ] add histoire?
