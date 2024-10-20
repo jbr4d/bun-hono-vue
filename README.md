@@ -13,7 +13,7 @@ This project was created using `bun init` in bun v1.1.17. [Bun](https://bun.sh) 
 
 ## TODO
 
-- [ ] Route auth meta
+- [ ] Auth data loader + route meta
 - [ ] Caching + optimistic updates
 - [ ] Add more linter + formatter config
 - [ ] Blob Storage
