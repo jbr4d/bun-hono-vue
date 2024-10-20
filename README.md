@@ -17,12 +17,12 @@ This project was created using `bun init` in bun v1.1.17. [Bun](https://bun.sh) 
 - [ ] Caching + optimistic updates
 - [ ] Add more linter + formatter config
 - [ ] Blob Storage
-- [ ] OpenAi generation
+- [ ] OpenAPI generation
 - [ ] Refactor from vue-shad to vue-radix
-- [ ] auto import
-- [ ] lazy loading
-- [ ] dark mode theming
-- [ ] image proxy?
+- [ ] Auto imports
+- [ ] Lazy loading
+- [ ] Dark mode theming
+- [ ] Image proxy?
 - [ ] Add Vitest cases
-- [ ] add the out of box admin panel thing
-- [ ] add histoire?
+- [ ] Add the out of box admin panel thing
+- [ ] Add histoire?
