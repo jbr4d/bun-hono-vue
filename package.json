@@ -10,7 +10,8 @@
     "@flydotio/dockerfile": "^0.5.8",
     "@types/bun": "latest",
     "@types/pg": "^8.11.10",
-    "drizzle-kit": "^0.25.0"
+    "drizzle-kit": "^0.25.0",
+    "prettier": "3.3.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
