@@ -10,19 +10,3 @@ bun install
 ```
 
 This project was created using `bun init` in bun v1.1.17. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
-
-## TODO
-
-- [ ] Auth data loader + route meta
-- [ ] Caching + optimistic updates
-- [ ] Add more linter + formatter config
-- [ ] Blob Storage
-- [ ] OpenAPI generation
-- [ ] Refactor from vue-shad to vue-radix
-- [ ] Auto imports
-- [ ] Lazy loading
-- [ ] Dark mode theming
-- [ ] Image proxy?
-- [ ] Add Vitest cases
-- [ ] Add the out of box admin panel thing
-- [ ] Add histoire?
