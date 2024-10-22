@@ -1,10 +1,5 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "typescript.preferences.autoImportFileExcludePatterns": ["vue-router/auto$"],
-    "conventionalCommits.scopes": [
-        "dev-deps",
-        "deps",
-        "db",
-        "prettier"
-    ]
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router/auto$"],
+  "conventionalCommits.scopes": ["dev-deps", "deps", "db", "prettier"]
 }

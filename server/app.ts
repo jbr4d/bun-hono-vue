@@ -8,7 +8,10 @@ const app = new Hono()
 
 app.use(logger())
 
-const apiRoutes = app.basePath('/api').route('/expenses', expensesRoute).route('/', authRoute)
+const apiRoutes = app
+  .basePath('/api')
+  .route('/expenses', expensesRoute)
+  .route('/', authRoute)
 
 app.get('*', serveStatic({ root: './ui/dist' }))
 app.get('*', serveStatic({ path: './ui/dist/index.html' }))

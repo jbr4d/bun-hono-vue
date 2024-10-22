@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { Button } from './ui/button';
+import { Button } from './ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/ui/card'
 
 import { useQueryClient, useQuery, useMutation } from '@tanstack/vue-query'
 
-import { api } from '@/lib/api';
-
+import { api } from '@/lib/api'
 
 defineProps<{ msg: string }>()
 
@@ -31,12 +30,9 @@ const { isLoading, isError, data, error } = useQuery({
   queryKey: ['get-total-spent'],
   queryFn: getTotalSpent,
 })
-
-
 </script>
 
 <template>
-
   <Card class="w-96 mx-auto">
     <CardHeader>
       <CardTitle>Total Spent</CardTitle>
@@ -44,11 +40,12 @@ const { isLoading, isError, data, error } = useQuery({
     </CardHeader>
     <CardContent>
       <span v-if="isLoading">Loading...</span>
-      <span v-else-if="isError">{{ `An error has ocurred: ${error?.message}` }}></span>
+      <span v-else-if="isError"
+        >{{ `An error has ocurred: ${error?.message}` }}></span
+      >
       {{ data?.total }}
     </CardContent>
   </Card>
 
   <h1>{{ msg }}</h1>
-
 </template>

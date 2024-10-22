@@ -1,9 +1,9 @@
-import { api } from "@/lib/api";
+import { api } from '@/lib/api'
 
 export async function getCurrentUser() {
-  const res = await api.me.$get();
+  const res = await api.me.$get()
   if (!res.ok) {
-    throw new Error("server error");
+    throw new Error('server error')
   }
-  return res.json();
+  return res.json()
 }

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
-import path from "path"
+import path from 'path'
 
 import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
@@ -19,20 +19,20 @@ export default defineConfig({
       extensions: ['.vue', '.md'],
       dts: 'src/typed-router.d.ts',
     }),
-    vue()
+    vue(),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@server": path.resolve(__dirname, "../server"),
+      '@': path.resolve(__dirname, './src'),
+      '@server': path.resolve(__dirname, '../server'),
     },
   },
   server: {
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
-        changeOrigin: true
-      }
-    }
-  }
+        changeOrigin: true,
+      },
+    },
+  },
 })
