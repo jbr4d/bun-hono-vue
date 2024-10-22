@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useQueryClient, useQuery, useMutation } from '@tanstack/vue-query'
 
-import { api } from '@/lib/api';
+import { api } from '@/lib/api'
 
 import {
   Table,
@@ -12,7 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
 
 defineProps<{ msg: string }>()
 
@@ -34,19 +33,14 @@ const { isLoading, isError, data, error } = useQuery({
 </script>
 
 <template>
-
   <div class="max-w-3xl m-auto">
     <Table>
       <TableCaption>A list of all expenses.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead class="w-[100px]">
-            ID
-          </TableHead>
+          <TableHead class="w-[100px]"> ID </TableHead>
           <TableHead>Name</TableHead>
-          <TableHead class="text-right">
-            Amount
-          </TableHead>
+          <TableHead class="text-right"> Amount </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody v-if="isLoading">...</TableBody>
@@ -56,7 +50,6 @@ const { isLoading, isError, data, error } = useQuery({
             {{ expense.id }}
           </TableCell>
           <TableCell>{{ expense.title }}</TableCell>
-          <!-- <TableCell>{{ invoice.paymentMethod }}</TableCell> -->
           <TableCell class="text-right">
             {{ `$${expense.amount}` }}
           </TableCell>
