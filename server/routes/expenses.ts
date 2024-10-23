@@ -1,9 +1,9 @@
-import { Hono } from 'hono'
 import { zValidator } from '@hono/zod-validator'
+import { desc, eq, sum, and } from 'drizzle-orm'
+import { Hono } from 'hono'
 
 import { db } from '../db'
 import { expensesTable, insertExpensesSchema } from '../db/schema/expenses'
-import { desc, eq, sum, and } from 'drizzle-orm'
 import { getUser } from '../kinde'
 
 import { createExpenseSchema } from '../sharedTypes'
