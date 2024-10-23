@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] Formatter
+- [x] Formatter
 - [ ] Linter
 - [ ] Look at hono/vite ssr int?
 - [ ] avoid Api routes in FE routing
