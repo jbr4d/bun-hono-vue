@@ -1,7 +1,7 @@
 # TODO
 
 - [x] Formatter
-- [ ] Linter
+- [x] Linter
 - [ ] Look at hono/vite ssr int?
 - [ ] avoid Api routes in FE routing
 - [ ] Auth data loader + route meta
