@@ -2,9 +2,10 @@
 
 - [x] Formatter
 - [x] Linter
-- [ ] Look at hono/vite ssr int?
-- [ ] avoid Api routes in FE routing
-- [ ] Auth data loader + route meta
+- [x] Look at hono/vite ssr int?
+  - <https://github.com/honojs/vite-plugins/tree/main/packages/dev-server>
+- [ ] Fix nav guard
+- [ ] Add Vitest cases
 - [ ] Caching + optimistic updates
 - [ ] Blob Storage
 - [ ] OpenAPI generation
@@ -13,6 +14,5 @@
 - [ ] Lazy loading
 - [ ] Dark mode theming
 - [ ] Image proxy?
-- [ ] Add Vitest cases
 - [ ] Add the out of box admin panel thing
 - [ ] Add histoire?
